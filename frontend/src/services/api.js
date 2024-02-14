@@ -2,7 +2,7 @@ import axios from "axios";
 import store from "@/store";
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api/v1/',
+  baseURL: 'https://veloxnet-back.vercel.app/api/v1/',
 });
 
 // Interceptador para configurar cabeçalho de autorização.
