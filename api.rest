@@ -1,0 +1,311 @@
+#############################
+#                           #
+#         Usuários          #
+#                           #
+#############################
+
+# Listagem de usuários
+GET http://127.0.0.1:8000/api/v1/usuarios/?username=ad
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+# Registro de usuário
+POST http://127.0.0.1:8000/api/v1/usuarios/registrar
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "username": "novousuario2",
+  "password": "senha",
+  "email": "novousuario2@example.com"
+}
+
+###
+
+# Login de usuário
+POST http://127.0.0.1:8000/api/v1/usuarios/auth/token/login
+Content-Type: application/json
+
+{
+  "email": "novousuario@example.com",
+  "password": "senha"
+}
+
+###
+
+# Info do usuário atual
+GET http://127.0.0.1:8000/api/v1/usuarios/auth/users/me/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+# Logout de usuário
+POST http://127.0.0.1:8000/api/v1/usuarios/auth/logout
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+# Editar usuário
+POST http://127.0.0.1:8000/api/v1/usuarios/auth/token/login
+Content-Type: application/json
+
+{
+  "username": "nomedousuario",
+  "email": "novousuario@example.com",
+  "is_active": true,
+  "password": "senha"
+}
+
+###
+
+# Desativar usuário
+DELETE  http://127.0.0.1:8000/api/v1/usuarios/deletar/1/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+#############################
+#                           #
+#           Planos          #
+#                           #
+#############################
+
+# Listar planos
+GET http://127.0.0.1:8000/api/v1/planos/
+
+###
+
+# Criar plano
+POST http://127.0.0.1:8000/api/v1/planos/criar
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "name": "Plano Avançado",
+  "value": 99.90
+}
+
+###
+
+# Editar plano
+PUT http://127.0.0.1:8000/api/v1/planos/editar/1/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "name": "novo nome plano",
+  "value": 499.90
+}
+
+###
+
+# Deletar plano
+DELETE  http://127.0.0.1:8000/api/v1/planos/deletar/1/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+#############################
+#                           #
+#   Benefícios dos planos   #
+#                           #
+#############################
+
+# Listagem de benefícios
+GET http://127.0.0.1:8000/api/v1/planos/beneficios/
+
+###
+
+# Criar benefício
+POST http://127.0.0.1:8000/api/v1/planos/beneficios/criar/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "name": "nova nome beneficio",
+  "description": "nova descricao beneficio"
+}
+
+###
+
+# Editar benefício
+PUT http://127.0.0.1:8000/api/v1/planos/beneficios/editar/1/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "name": "novo nome beneficio",
+  "description": "nova descricao beneficio"
+}
+
+###
+
+# Deletar benefício
+DELETE  http://127.0.0.1:8000/api/v1/planos/beneficios/deletar/1/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+#############################
+#                           #
+#        Assinaturas        #
+#                           #
+#############################
+
+# Listagem de assinaturas
+GET http://127.0.0.1:8000/api/v1/assinaturas/
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+# Criar assinatura
+POST http://127.0.0.1:8000/api/v1/assinaturas/criar
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "user": 1,
+  "description": 1
+}
+
+###
+
+# Editar assinatura
+PUT http://127.0.0.1:8000/api/v1/assinaturas/editar/1/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "name": "novo nome assinatura",
+  "description": "nova descricao assinatura"
+}
+
+###
+
+# Deletar assinatura
+DELETE  http://127.0.0.1:8000/api/v1/assinaturas/deletar/3
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+#############################
+#                           #
+#        Localidades        #
+#                           #
+#############################
+
+# Listagem de localidades
+GET http://127.0.0.1:8000/api/v1/localidades/
+
+###
+
+# Criar localidade
+POST http://127.0.0.1:8000/api/v1/localidades/criar/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "city": "nova cidade localidade",
+  "state": "novo estado localidade"
+}
+
+###
+
+# Editar localidade
+PUT http://127.0.0.1:8000/api/v1/localidades/editar/1/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "city": "novo nome cidade localidade",
+  "state": "novo nome estado localidade"
+}
+
+###
+
+# Deletar localidade
+DELETE  http://127.0.0.1:8000/api/v1/localidades/deletar/1/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+#############################
+#                           #
+#          Boletos          #
+#                           #
+#############################
+
+# Listar boletos
+GET http://127.0.0.1:8000/api/v1/boletos/
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+# Criar boleto
+POST http://127.0.0.1:8000/api/v1/boletos/criar/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "user": 1,
+  "plan": 1
+}
+
+###
+
+# Editar boleto
+PUT http://127.0.0.1:8000/api/v1/boletos/editar/1/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "user": 2,
+  "plan": 1
+}
+
+###
+
+# Deletar boleto
+DELETE  http://127.0.0.1:8000/api/v1/boletos/deletar/1/
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+#############################
+#                           #
+#  Endpoints dos clientes   #
+#                           #
+#############################
+
+# Alteração de Senha do cliente
+PUT http://127.0.0.1:8000/api/v1/cliente/senha/alterar
+Content-Type: application/json
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+{
+  "old_password": "senhadonovousuario",
+  "new_password": "senha"
+}
+
+###
+
+# Listar assinaturas do cliente
+GET http://127.0.0.1:8000/api/v1/cliente/assinaturas
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
+
+# Listar boletos do cliente
+GET http://127.0.0.1:8000/api/v1/cliente/boletos
+Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+
+###
