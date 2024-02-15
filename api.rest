@@ -6,19 +6,19 @@
 
 # Listagem de usuários
 GET http://127.0.0.1:8000/api/v1/usuarios/?username=ad
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
 # Registro de usuário
 POST http://127.0.0.1:8000/api/v1/usuarios/registrar
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 {
-  "username": "novousuario2",
+  "username": "novousuario",
   "password": "senha",
-  "email": "novousuario2@example.com"
+  "email": "novousuario@example.com"
 }
 
 ###
@@ -37,14 +37,14 @@ Content-Type: application/json
 # Info do usuário atual
 GET http://127.0.0.1:8000/api/v1/usuarios/auth/users/me/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
 # Logout de usuário
 POST http://127.0.0.1:8000/api/v1/usuarios/auth/logout
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
@@ -64,7 +64,7 @@ Content-Type: application/json
 # Desativar usuário
 DELETE  http://127.0.0.1:8000/api/v1/usuarios/deletar/1/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
@@ -82,11 +82,12 @@ GET http://127.0.0.1:8000/api/v1/planos/
 # Criar plano
 POST http://127.0.0.1:8000/api/v1/planos/criar
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 {
   "name": "Plano Avançado",
-  "value": 99.90
+  "value": 99.90,
+  "benefits": [1, 2, 3]
 }
 
 ###
@@ -94,11 +95,12 @@ Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
 # Editar plano
 PUT http://127.0.0.1:8000/api/v1/planos/editar/1/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 {
   "name": "novo nome plano",
-  "value": 499.90
+  "value": 499.90,
+  "benefits": [4, 5, 6]
 }
 
 ###
@@ -106,7 +108,7 @@ Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
 # Deletar plano
 DELETE  http://127.0.0.1:8000/api/v1/planos/deletar/1/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
@@ -124,11 +126,11 @@ GET http://127.0.0.1:8000/api/v1/planos/beneficios/
 # Criar benefício
 POST http://127.0.0.1:8000/api/v1/planos/beneficios/criar/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 {
-  "name": "nova nome beneficio",
-  "description": "nova descricao beneficio"
+  "name": "nome do beneficio",
+  "description": "descricao do beneficio"
 }
 
 ###
@@ -136,11 +138,11 @@ Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
 # Editar benefício
 PUT http://127.0.0.1:8000/api/v1/planos/beneficios/editar/1/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 {
-  "name": "novo nome beneficio",
-  "description": "nova descricao beneficio"
+  "name": "novo nome do beneficio",
+  "description": "nova descricao do beneficio"
 }
 
 ###
@@ -148,7 +150,7 @@ Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
 # Deletar benefício
 DELETE  http://127.0.0.1:8000/api/v1/planos/beneficios/deletar/1/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
@@ -160,38 +162,56 @@ Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
 
 # Listagem de assinaturas
 GET http://127.0.0.1:8000/api/v1/assinaturas/
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
 # Criar assinatura
 POST http://127.0.0.1:8000/api/v1/assinaturas/criar
-Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Authorization: Token <SEU-TOKEN-AQUI>
 
-{
-  "user": 1,
-  "description": 1
-}
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="user"
+
+1
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="plan"
+
+1
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="contract"; filename="example.pdf"
+Content-Type: application/pdf
+
+< ./example.pdf
+
+----WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
 # Editar assinatura
 PUT http://127.0.0.1:8000/api/v1/assinaturas/editar/1/
-Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Authorization: Token <SEU-TOKEN-AQUI>
 
-{
-  "name": "novo nome assinatura",
-  "description": "nova descricao assinatura"
-}
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="plan"
+
+2
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="contract"; filename="new-example.pdf"
+Content-Type: application/pdf
+
+< ./new-example.pdf
+
+----WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
 # Deletar assinatura
 DELETE  http://127.0.0.1:8000/api/v1/assinaturas/deletar/3
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
@@ -209,7 +229,7 @@ GET http://127.0.0.1:8000/api/v1/localidades/
 # Criar localidade
 POST http://127.0.0.1:8000/api/v1/localidades/criar/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 {
   "city": "nova cidade localidade",
@@ -221,7 +241,7 @@ Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
 # Editar localidade
 PUT http://127.0.0.1:8000/api/v1/localidades/editar/1/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 {
   "city": "novo nome cidade localidade",
@@ -233,7 +253,7 @@ Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
 # Deletar localidade
 DELETE  http://127.0.0.1:8000/api/v1/localidades/deletar/1/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
@@ -245,38 +265,56 @@ Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
 
 # Listar boletos
 GET http://127.0.0.1:8000/api/v1/boletos/
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
 # Criar boleto
 POST http://127.0.0.1:8000/api/v1/boletos/criar/
-Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Authorization: Token <SEU-TOKEN-AQUI>
 
-{
-  "user": 1,
-  "plan": 1
-}
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="signature"
+
+1
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="expire_date"
+
+01-01-2024
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="document"; filename="example.pdf"
+Content-Type: application/pdf
+
+< ./example.pdf
+
+----WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
 # Editar boleto
 PUT http://127.0.0.1:8000/api/v1/boletos/editar/1/
-Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Authorization: Token <SEU-TOKEN-AQUI>
 
-{
-  "user": 2,
-  "plan": 1
-}
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="expire_date"
+
+03-02-2024
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="document"; filename="new-example.pdf"
+Content-Type: application/pdf
+
+< ./new-example.pdf
+
+----WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
 # Deletar boleto
 DELETE  http://127.0.0.1:8000/api/v1/boletos/deletar/1/
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
@@ -289,7 +327,7 @@ Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
 # Alteração de Senha do cliente
 PUT http://127.0.0.1:8000/api/v1/cliente/senha/alterar
 Content-Type: application/json
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 {
   "old_password": "senhadonovousuario",
@@ -300,12 +338,12 @@ Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
 
 # Listar assinaturas do cliente
 GET http://127.0.0.1:8000/api/v1/cliente/assinaturas
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
 
 # Listar boletos do cliente
 GET http://127.0.0.1:8000/api/v1/cliente/boletos
-Authorization: Token 0db251aa22b3a15b97d633a68cb6bd0f403ecea5
+Authorization: Token <SEU-TOKEN-AQUI>
 
 ###
