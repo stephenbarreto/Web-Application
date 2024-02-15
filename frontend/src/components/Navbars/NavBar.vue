@@ -70,7 +70,7 @@ export default {
         cancelButtonText: 'Cancelar',
       }).then((result) => {
         if (result.isConfirmed) {
-          this.store.dispatch('logout');
+          this.$store.dispatch('logout');
         }
       });
     }
