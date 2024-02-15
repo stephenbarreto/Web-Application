@@ -1,24 +1,63 @@
-# frontend
+# VeloxNet - Frontend
 
-## Project setup
-```
+Frontend da aplicação, desenvolvido com Vue.js.
+
+## Como Rodar o Frontend
+
+Siga estas instruções para configurar e executar o frontend localmente.
+
+### Pré-requisitos
+
+- Node.js instalado (versão 20.0.x)
+- Yarn instalado (versão mais recente recomendada)
+
+### Instalação do Node.js e Yarn
+
+#### macOS
+
+1. Instale o Homebrew (se já não estiver instalado):
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. Instale o Node.js e o Yarn usando o Homebrew:
+   ```bash
+   brew install node
+   brew install yarn
+   ```
+
+#### Linux
+
+1. Instale o Node.js e o Yarn usando o gerenciador de pacotes do seu sistema (por exemplo, apt, yum, pacman):
+   ```bash
+   # Instalação do Node.js
+   sudo apt install nodejs
+   # Instalação do Yarn
+   npm install -g yarn
+   ```
+
+#### Windows
+
+- Você pode baixar e instalar o Node.js e o Yarn a partir de seus sites oficiais:
+  - [Node.js](https://nodejs.org/)
+  - [Yarn](https://yarnpkg.com/)
+
+### Instalação das Dependências
+
+```bash
+cd frontend
 yarn install
 ```
 
-### Compiles and hot-reloads for development
-```
+### Executando o Servidor de Desenvolvimento
+
+```bash
 yarn serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+Agora você pode acessar o frontend em [http://localhost:8080/](http://localhost:8080/).
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Referências
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- **Vue.js**: [Documentação oficial do Vue.js](https://vuejs.org/)
+
