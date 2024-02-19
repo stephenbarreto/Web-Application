@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 
 @deconstructible
 class UnicodeUsernameValidator(validators.RegexValidator):
-    regex = r"^[\w.@+-\s]+\Z"
+    regex = r"^[\w\s.@+-]+\Z"
     message = _(
         "Enter a valid username. This value may contain only letters, "
         "numbers, spaces, and @/./+/-/_ characters."
