@@ -1,6 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth import get_user_model
+from django.core import validators
+from django.utils.deconstruct import deconstructible
+from django.utils.translation import gettext_lazy as _
+
+
+@deconstructible
+class UnicodeUsernameValidator(validators.RegexValidator):
+    regex = r"^[\w.@+-\s]+\Z"
+    message = _(
+        "Enter a valid username. This value may contain only letters, "
+        "numbers, spaces, and @/./+/-/_ characters."
+    )
+    flags = 0
 
 
 class User(AbstractUser):
@@ -14,6 +27,7 @@ class User(AbstractUser):
     is_manager = models.BooleanField(
         verbose_name='É um administrador', default=False
     )
+    username_validator = UnicodeUsernameValidator()
 
     REQUIRED_FIELDS = ['username']
     USERNAME_FIELD = 'email'
