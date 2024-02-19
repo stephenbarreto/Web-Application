@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 @deconstructible
-class UnicodeUsernameValidator(validators.RegexValidator):
+class CustomUnicodeUsernameValidator(validators.RegexValidator):
     regex = r"^[\w\s.@+-]+\Z"
     message = _(
         "Enter a valid username. This value may contain only letters, "
@@ -27,7 +27,19 @@ class User(AbstractUser):
     is_manager = models.BooleanField(
         verbose_name='É um administrador', default=False
     )
-    username_validator = UnicodeUsernameValidator()
+    username_validator = CustomUnicodeUsernameValidator()
+    username = models.CharField(
+        _("username"),
+        max_length=150,
+        unique=True,
+        help_text=_(
+            "Required. 150 characters or fewer. Letters, spaces, digits and @/./+/-/_ only."
+        ),
+        validators=[username_validator],
+        error_messages={
+            "unique": _("A user with that username already exists."),
+        },
+    )
 
     REQUIRED_FIELDS = ['username']
     USERNAME_FIELD = 'email'
