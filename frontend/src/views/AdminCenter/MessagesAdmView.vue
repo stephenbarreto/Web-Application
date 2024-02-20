@@ -47,7 +47,7 @@ export default {
 
 <template>
   <SidebarNav />
-  <main class="ma'in-content position-relative max-height-vh-100 h-100 overflow-x-hidden">
+  <main class="main-content position-relative max-height-vh-100 h-100 overflow-x-hidden">
     <NavBar />
     <div class="container-fluid mt-5">
       <div class="row justify-content-center">
