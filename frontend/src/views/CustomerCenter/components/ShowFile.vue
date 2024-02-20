@@ -8,7 +8,6 @@ export default {
 
 <template>
   <div>
-    {{ file }}
-    <iframe :src="file" frameborder="0"></iframe>
+    <iframe :src="file" frameborder="0" class="w-100 min-vh-75"></iframe>
   </div>
 </template>
