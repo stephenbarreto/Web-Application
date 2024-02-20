@@ -5,12 +5,11 @@ from rest_framework.generics import (
 )
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.views import APIView
 from .serializers import (
-    ChangePasswordSerializer, ClientSignatureSerializer, ListPlanSerializer,
-    MessageSerializer, PlanSerializer, SignatureSerializer, LocalitySerializer,
-    UpdateUserSerializer, UserSerializer, TicketSerializer, PlanBenefitSerializer, 
-    CreateSignatureSerializer
+    ChangePasswordSerializer, ClientSignatureSerializer, ClientTicketSerializer,
+    ListPlanSerializer, MessageSerializer, PlanSerializer, SignatureSerializer,
+    LocalitySerializer, UpdateUserSerializer, UserSerializer, TicketSerializer,
+    PlanBenefitSerializer, CreateSignatureSerializer
 )
 from .models import Message, Signature, User, Locality, Plan, Ticket, PlanBenefit
 from .permissions import IsManager
@@ -111,9 +110,6 @@ class SignatureCreateView(CreateAPIView):
     permission_classes = [IsManager]
     parser_classes = (MultiPartParser, FormParser)
 
-    def post(self, request, *args, **kwargs):
-        print(request.data)
-        return super().post(request, *args, **kwargs)
 
 class SignatureListView(ListAPIView):
     queryset = Signature.objects.all()
@@ -131,7 +127,7 @@ class SignatureListView(ListAPIView):
 
 
 class ClientSignatureListView(ListAPIView):
-    permission_classes = [IsManager]
+    permission_classes = [IsAuthenticated]
     serializer_class = ClientSignatureSerializer
 
     def get_queryset(self):
@@ -179,8 +175,8 @@ class LocalityDestroyView(DestroyAPIView):
 
 
 class ClientTicketListView(ListAPIView):
-    permission_classes = [IsManager]
-    serializer_class = TicketSerializer
+    permission_classes = [IsAuthenticated]
+    serializer_class = ClientTicketSerializer
 
     def get_queryset(self):
         user = self.request.user

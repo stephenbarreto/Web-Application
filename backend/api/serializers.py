@@ -120,6 +120,20 @@ class LocalitySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class ClientTicketSerializer(serializers.ModelSerializer):
+    signature = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Ticket
+        fields = [
+            'signature', 'expire_date', 'document', 'status', 'created_date'
+        ]
+
+    def get_signature(self, obj):
+        serializer = ClientSignatureSerializer(obj.signature)
+        return serializer.data
+
+
 class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
