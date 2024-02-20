@@ -34,13 +34,12 @@ export default {
 
       // Cria e exibe o modal sweet alert
       return Swal.fire({
-        title: 'Novo Cliente',
+        title: 'Contrato',
         html: form.$el,
-        focusConfirm: false,
-        showCancelButton: true,
-        preConfirm: () => {
-          // Retorna os dados do form do componente Vue
-          return form.getFormData();
+        showCloseButton: true,
+        showConfirmButton: false,
+        customClass: {
+          popup: 'w-100 w-md-70 w-lg-60 w-xl-50',
         },
       })
     },
@@ -65,17 +64,17 @@ export default {
                   <thead>
                     <tr>
                       <th>Plano</th>
-                      <th>Valor</th>
-                      <th>status</th>
+                      <th class="text-center">Valor</th>
+                      <th class="text-center">status</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr v-for="(signature, index) in signatures" :key="index">
                       <td>{{ signature.plan.name }}</td>
-                      <td>R${{ signature.plan.value }}</td>
-                      <td>{{ signature.is_active ? ativo : inativo }}</td>
-                      <td class="d-flex">
-                        {{ signature }}
+                      <td class="text-center">R${{ signature.plan.value }}</td>
+                      <td class="text-center">{{ signature.is_active ? 'ativo' : 'inativo' }}</td>
+                      <td class="d-flex text-center">
                         <MaterialButton @click="showContract(signature.contract)" color="warning" margin="mb-0 mx-1"
                           size="sm" icon="eye">
                           <span class="d-none d-md-block">Ver contrato</span>

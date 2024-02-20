@@ -4,9 +4,11 @@ import NavBar from '@/components/Navbars/NavBar.vue'
 import SidebarNav from './components/SidebarNav.vue'
 import MaterialButton from '@/components/MaterialButton.vue'
 import setMaterialInput from "@/assets/js/material-input";
+import TicketForm from './components/TicketForm.vue';
 
 import api from '@/services/api'
 import Swal from 'sweetalert2'
+import { createApp } from 'vue'
 
 export default {
   components: {
@@ -70,7 +72,45 @@ export default {
           });
         }
       });
-    }
+    },
+    getTicketModal(signature) {
+      // Criar um elemento div
+      const div = document.createElement('div');
+      // Montar o componente vue na div
+      const form = createApp(TicketForm, { signature: signature }).mount(div);
+
+      // Cria e exibe o modal sweet alert
+      return Swal.fire({
+        title: 'Novo Boleto',
+        html: form.$el,
+        focusConfirm: false,
+        showCancelButton: true,
+        preConfirm: () => {
+          // Retorna os dados do form do componente Vue
+          return form.getFormData();
+        },
+        onAfterClose: () => {
+          // Destroi o componente após o fechamento do alerta
+          form.$destroy();
+        },
+      })
+    },
+    createTicket(signature) {
+      this.getTicketModal(signature).then(result => {
+        if (result.isConfirmed) {
+          api.post('boletos/criar', result.value, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          }).then(() => {
+            this.getSignatures();
+            Swal.fire('Criado!', 'Boleto criado com sucesso.', 'success');
+          }).catch(e => {
+            console.error('Erro ao criar o boleto: ', e)
+          });
+        }
+      })
+    },
   },
   mounted() {
     this.getSignatures();
@@ -120,6 +160,10 @@ export default {
                         <MaterialButton v-else @click="reactivateSignature(signature.id)" color="success"
                           margin="mb-0 mx-1" size="sm" icon="user-check">
                           <span class="d-none d-md-block">Reativar</span>
+                        </MaterialButton>
+                        <MaterialButton @click="createTicket(signature)" color="success" margin="mb-0 mx-1" size="sm"
+                          icon="plus">
+                          <span class="d-none d-md-block">Nova Boleto</span>
                         </MaterialButton>
                       </td>
                     </tr>
