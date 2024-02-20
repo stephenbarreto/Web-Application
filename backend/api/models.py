@@ -4,6 +4,8 @@ from django.contrib.auth import get_user_model
 from django.core import validators
 from django.utils.deconstruct import deconstructible
 from django.utils.translation import gettext_lazy as _
+from core.storage_backends import PrivateMediaStorage
+from django.conf import settings
 
 
 @deconstructible
@@ -87,7 +89,10 @@ class Signature(models.Model):
 
     user = models.ForeignKey(get_user_model(), on_delete=models.PROTECT)
     plan = models.ForeignKey(Plan, on_delete=models.SET_NULL, null=True)
-    contract = models.FileField(verbose_name='Contrato', null=True, upload_to='contratos/')
+    contract = models.FileField(
+        verbose_name='Contrato', null=True, upload_to='contratos/',
+        storage=(PrivateMediaStorage if settings.USE_S3 else None)
+    )
     is_active = models.BooleanField(verbose_name='Assinatura ativa?', default=True)
 
 
@@ -107,7 +112,10 @@ class Ticket(models.Model):
     updated_date = models.DateField(verbose_name='Data da última alteração', auto_now=True)
     expire_date = models.DateField(verbose_name='Data limite para o pagamento')
     status = models.IntegerField(verbose_name='Status', choices=STATUS_CHOICES, default=0)
-    document = models.FileField(verbose_name='Boleto', blank=True, upload_to='boletos/')
+    document = models.FileField(
+        verbose_name='Boleto', blank=True, upload_to='boletos/',
+        storage=(PrivateMediaStorage if settings.USE_S3 else None)
+    )
 
 
 class Message(models.Model):
