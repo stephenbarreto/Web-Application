@@ -41,6 +41,24 @@
   &.focused .input-group-text {
     border-color: $input-focus-border-color;
   }
+
+  &.input-group-outline,
+  &.input-group-dynamic {
+    .form-label ~ .form-control {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &.is-focused,
+    &.is-filled {
+      .form-label ~ .form-control {
+        &::placeholder {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 
