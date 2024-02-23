@@ -17,6 +17,7 @@ import LocalitiesView from "@/views/LocalitiesView.vue"
 import SignaturesView from "@/views/CustomerCenter/SignaturesView.vue"
 import TicketsView from "@/views/CustomerCenter/TicketsView.vue"
 import NotFound from "@/views/NotFound.vue"
+import TicketsAdmView from "@/views/AdminCenter/TicketsAdmView.vue"
 
 import api from '@/services/api';
 import store from '@/store';
@@ -103,6 +104,12 @@ const adminRoutes = [
     name: "adm-messages",
     component: MessagesAdmView,
     meta: { requiresAuth: true, requiresAdmin: true, title: 'Mensagens' }
+  },
+  {
+    path: "/adm/boletos",
+    name: "adm-tickets",
+    component: TicketsAdmView,
+    meta: { requiresAuth : true, requiresAdmin: true, title: 'Boletos' }
   },
 ]
 

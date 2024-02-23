@@ -14,7 +14,8 @@ export default {
         { href: '/adm/localidades', name: 'Localidades', icon: 'share_location' },
         { href: '/adm/usuarios', name: 'Clientes', icon: 'group' },
         { href: '/adm/assinaturas', name: 'Assinaturas', icon: 'receipt_long' },
-        { href: '/adm/mensagens', name: 'Mensagens', icon: 'message' }
+        { href: '/adm/mensagens', name: 'Mensagens', icon: 'message' },
+        { href: '/adm/boletos', name: 'Boletos', icon: 'attach_money' }
       ],
     }
   }
