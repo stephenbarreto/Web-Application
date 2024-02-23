@@ -1,5 +1,5 @@
 .input-group {
-  @include border-radius(0, 0);
+  @include border-radius($input-border-radius, 0);
 
   &:not(.has-validation) {
     > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu),
@@ -203,7 +203,7 @@
 
     &.is-focused,
     &.is-filled {
-      .form-label + .form-control {
+      .form-label ~ .form-control {
         border-color: $primary !important;
         border-top-color: transparent !important;
         box-shadow: inset 1px 0 $primary, inset -1px 0 $primary,
@@ -240,7 +240,7 @@
       }
       &.is-focused,
       &.is-filled {
-        .form-label + .form-control {
+        .form-label ~ .form-control {
           border-color: $success !important;
           box-shadow: inset 1px 0 $success, inset -1px 0 $success,
             inset 0 -1px $success;
@@ -267,7 +267,7 @@
       }
       &.is-focused,
       &.is-filled {
-        .form-label + .form-control {
+        .form-label ~ .form-control {
           border-color: $danger !important;
           box-shadow: inset 1px 0 $danger, inset -1px 0 $danger,
             inset 0 -1px $danger;
@@ -310,6 +310,24 @@
     label {
       margin-left: 0;
       margin-bottom: 0;
+    }
+  }
+
+  &.input-group-outline,
+  &.input-group-dynamic {
+    .form-label ~ .form-control {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &.is-focused,
+    &.is-filled {
+      .form-label ~ .form-control {
+        &::placeholder {
+          opacity: 1;
+        }
+      }
     }
   }
 }
