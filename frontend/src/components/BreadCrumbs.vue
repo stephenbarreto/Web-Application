@@ -23,6 +23,10 @@ export default {
     basePage: {
       type: String,
       default: "Páginas"
+    },
+    color: {
+      type: String,
+      default: "text-dark"
     }
   },
 };
