@@ -23,6 +23,7 @@ export default {
       color: "bg-gradient-primary",
       label: "Central do administrador"
     }
+  
     this.action = this.$store.state.user?.is_manager ? admin : customer;
   },
   props: {
@@ -67,6 +68,7 @@ export default {
     // set text color
     getTextColor() {
       let color;
+
       if (this.transparent && this.textDark.value) {
         color = "text-dark";
       } else if (this.transparent) {

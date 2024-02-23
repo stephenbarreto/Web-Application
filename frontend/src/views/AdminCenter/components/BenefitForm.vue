@@ -1,4 +1,5 @@
 <script>
+// componentes
 import MaterialInput from '@/components/MaterialInput.vue';
 
 export default {
@@ -27,9 +28,6 @@ export default {
   components: {
     MaterialInput
   },
-  mounted() {
-
-  }
 }
 </script>
 

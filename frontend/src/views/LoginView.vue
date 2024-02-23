@@ -4,7 +4,6 @@ import MaterialInput from '@/components/MaterialInput.vue';
 import NavbarDefault from '@/components/Navbars/NavbarDefault.vue';
 import FooterCentered from '@/components/FooterCentered.vue'
 import WppButton from '@/components/WppButton.vue';
-
 import api from '@/services/api';
 
 export default {

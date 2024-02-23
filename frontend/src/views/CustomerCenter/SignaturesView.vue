@@ -75,7 +75,7 @@ export default {
                       <td class="text-center">R${{ signature.plan.value }}</td>
                       <td class="text-center">{{ signature.is_active ? 'ativo' : 'inativo' }}</td>
                       <td class="d-flex text-center">
-                        <MaterialButton @click="showContract(signature.contract)" color="warning" margin="mb-0 mx-1"
+                        <MaterialButton @click="showContract(signature.contract)" color="info" margin="mb-0 mx-1"
                           size="sm" icon="eye">
                           <span class="d-none d-md-block">Ver contrato</span>
                         </MaterialButton>

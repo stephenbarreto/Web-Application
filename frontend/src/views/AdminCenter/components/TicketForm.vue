@@ -1,4 +1,5 @@
 <script>
+// componentes
 import MaterialInput from '@/components/MaterialInput.vue';
 
 export default {

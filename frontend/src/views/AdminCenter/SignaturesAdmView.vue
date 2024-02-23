@@ -3,7 +3,6 @@
 import NavBar from '@/components/Navbars/NavBar.vue'
 import SidebarNav from './components/SidebarNav.vue'
 import MaterialButton from '@/components/MaterialButton.vue'
-import setMaterialInput from "@/assets/js/material-input";
 import TicketForm from './components/TicketForm.vue';
 
 import api from '@/services/api'
@@ -23,7 +22,6 @@ export default {
     }
   },
   methods: {
-    setMaterialInput,
     getSignatures() {
       api.get('assinaturas/', {
         params: {
@@ -114,7 +112,6 @@ export default {
   },
   mounted() {
     this.getSignatures();
-    setMaterialInput();
   }
 }
 </script>
