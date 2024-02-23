@@ -99,7 +99,7 @@ export default {
                       <td class="text-center">{{ formatDate(ticket.expire_date) }}</td>
                       <td class="text-center">{{ getStatusName(ticket.status) }}</td>
                       <td class="d-flex text-center">
-                        <MaterialButton @click="showTicket(ticket.document)" color="warning" margin="mb-0 mx-1" size="sm"
+                        <MaterialButton @click="showTicket(ticket.document)" color="info" margin="mb-0 mx-1" size="sm"
                           icon="eye">
                           <span class="d-none d-md-block">Ver boleto</span>
                         </MaterialButton>
