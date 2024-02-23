@@ -14,7 +14,7 @@ O projeto é uma aplicação web moderna desenvolvida para o provedor de interne
 ## Tecnologias Utilizadas
 
 - **Frontend**: Vue.js, Vue Router, Vuex, Axios e SweetAlert2.
-- **Backend**: Django, Django REST Framework, djoser e corsheaders.
+- **Backend**: Django, Django REST Framework, djoser, corsheaders e AWS S3.
 - **Banco de Dados**: PostgreSQL.
 - **Outras Ferramentas**: Yarn e Git.
 - **Hospedagemm**: Vercel.

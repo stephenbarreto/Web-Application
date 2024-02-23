@@ -61,3 +61,19 @@ Agora você pode acessar o frontend em [http://localhost:8080/](http://localhost
 
 - **Vue.js**: [Documentação oficial do Vue.js](https://vuejs.org/)
 
+## Tema
+
+Para a composição dos templates foi utilizado o tema [Vue Material Dashboard 2](https://www.creative-tim.com/product/vue-material-dashboard), um pacote baseado em bootstrap e com componentes prontos para o Vue.js, construído por [Creative-Tim](https://www.creative-tim.com/).
+
+## Ícones
+
+Para criação dos ícones usados no navegador e em alguns sistemas operacionais como Windows, Android e IOS, foi utilizada a plataforma [RealFaviconGenerator](https://realfavicongenerator.net/).
+
+## Inspiração
+
+- [Conectell](https://conectell.com.br/)
+- [Rapeedo](https://rapeedo.com.br/)
+
+## Tutoriais Seguidos
+
+- [Como fazer deploy de uma aplicação Vue.js na Vercel](https://www.youtube.com/watch?v=LjqGkfyDg-Y)
