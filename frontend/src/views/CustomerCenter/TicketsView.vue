@@ -3,7 +3,7 @@
 import NavBar from '@/components/Navbars/NavBar.vue'
 import SidebarNav from './components/SidebarNav.vue'
 import MaterialButton from '@/components/MaterialButton.vue'
-import ShowFile from './components/ShowFile.vue'
+import ShowFile from '@/components/ShowFile.vue'
 
 import api from '@/services/api'
 import Swal from 'sweetalert2'
