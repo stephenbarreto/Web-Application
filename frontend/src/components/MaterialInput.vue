@@ -3,6 +3,10 @@ import setMaterialInput from "@/assets/js/material-input";
 
 export default {
   props: {
+    variant: {
+      type: String,
+      default: "outline",
+    },
     name: {
       type: String,
       default: "",
@@ -66,7 +70,6 @@ export default {
     };
   },
   methods: {
-    setMaterialInput,
     getClasses(size, success, error) {
       let sizeValue, isValidValue;
 
@@ -90,7 +93,7 @@ export default {
     this.inputValue = this.value;
   },
   mounted() {
-    this.setMaterialInput();
+    setMaterialInput();
 
     if (this.value) {
       this.emitChange();
@@ -98,9 +101,10 @@ export default {
   }
 }
 </script>
+
 <template>
-  <div class="input-group" :class="inputValue ? 'is-filled' : ''">
-    <label v-if="label" :class="label.class">
+  <div class="input-group" :class="[(inputValue || type === 'date') ? 'is-filled' : '', `input-group-${variant}`]">
+    <label v-if="label" :class="[variant === 'static' ? '' : 'form-label', label.class]">
       {{ typeof label == "string" ? label : label.text }}
     </label>
     <span v-if="icon" class="input-group-text"><i class="fas" :class="`fa-${icon}`" aria-hidden="true"></i></span>
