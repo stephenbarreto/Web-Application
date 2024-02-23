@@ -7,9 +7,9 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from .serializers import (
     ChangePasswordSerializer, ClientSignatureSerializer, ClientTicketSerializer,
-    ListPlanSerializer, MessageSerializer, PlanSerializer, SignatureSerializer,
-    LocalitySerializer, UpdateUserSerializer, UserSerializer, TicketSerializer,
-    PlanBenefitSerializer, CreateSignatureSerializer
+    ListPlanSerializer, ListTicketSerializer, MessageSerializer, PlanSerializer,
+    SignatureSerializer, LocalitySerializer, UpdateUserSerializer, UserSerializer,
+    TicketSerializer, PlanBenefitSerializer, CreateSignatureSerializer
 )
 from .models import Message, Signature, User, Locality, Plan, Ticket, PlanBenefit
 from .permissions import IsManager
@@ -191,7 +191,7 @@ class TicketCreateView(CreateAPIView):
 
 class TicketListView(ListAPIView):
     queryset = Ticket.objects.all()
-    serializer_class = TicketSerializer
+    serializer_class = ListTicketSerializer
 
 
 class TicketUpdateView(UpdateAPIView):

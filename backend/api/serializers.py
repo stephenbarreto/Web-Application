@@ -140,6 +140,18 @@ class TicketSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class ListTicketSerializer(serializers.ModelSerializer):
+    signature = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Ticket
+        fields = '__all__'
+
+    def get_signature(self, obj):
+        serializer = SignatureSerializer(obj.signature)
+        return serializer.data
+
+
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
