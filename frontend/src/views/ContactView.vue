@@ -3,6 +3,8 @@
 import NavbarDefault from '@/components/Navbars/NavbarDefault.vue';
 import FooterCentered from '@/components/FooterCentered.vue'
 import WppButton from '@/components/WppButton.vue';
+import MaterialInput from '@/components/MaterialInput.vue';
+import MaterialTextarea from '@/components/MaterialTextarea.vue';
 
 import CardBG from '@/assets/img/veloxnet/capa2.png';
 
@@ -14,25 +16,23 @@ export default {
   data() {
     return {
       CardBG,
-      email: '',
-      description: '',
-      name: ''
+      data: {
+        email: '',
+        description: '',
+        name: ''
+      },
     }
   },
   components: {
     NavbarDefault,
     FooterCentered,
     WppButton,
+    MaterialInput,
+    MaterialTextarea,
   },
   methods: {
     sendMessage() {
-      const data = {
-        name: this.name,
-        email: this.email,
-        description: this.description
-      }
-
-      api.post('mensagens/criar', data).then(() => {
+      api.post('mensagens/criar', this.data).then(() => {
         Swal.fire('Enviada!', 'Sua mensagem foi enviada com sucesso.', 'success');
       }).catch(() => {
         Swal.fire(
@@ -45,7 +45,10 @@ export default {
           'error'
         );
       });
-    }
+    },
+    updateData({ name, value }) {
+      this.data[name] = value
+    },
   }
 }
 </script>
@@ -103,13 +106,11 @@ export default {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-lg-8 col-10 mx-auto text-center">
-                <div class="mb-md-5">
-                  <h3>Contate-nos</h3>
-                  <p class="text-dark">
-                    Para mais dúvidas, envie um e-mail para hello@email.com ou entre em contato através do nosso
-                    formulário de contato.
-                  </p>
-                </div>
+                <h3>Contate-nos</h3>
+                <p class="text-dark">
+                  Para mais dúvidas, envie um e-mail para hello@email.com ou entre em contato através do nosso
+                  formulário de contato.
+                </p>
               </div>
             </div>
             <div class="row">
@@ -119,27 +120,18 @@ export default {
                     <div class="card-body">
                       <div class="row">
                         <div class="col-md-6">
-                          <div class="input-group input-group-static mb-4">
-                            <label>Seu nome completo</label>
-                            <input type="text" class="form-control" placeholder="Nome completo" v-model="name">
-                            <span class="input-group-text"><i class="material-icons">person</i></span>
-                          </div>
+                          <MaterialInput id="name" class="mb-3" variant="outline" :label="{ text: 'Seu nome completo' }"
+                            type="text" icon="user" name="name" @input-change="updateData" placeholder="Nome completo" />
                         </div>
                         <div class="col-md-6 ps-md-2">
-                          <div class="input-group input-group-static mb-4">
-                            <label>Seu e-mail</label>
-                            <input type="email" class="form-control" placeholder="E-mail" v-model="email">
-                            <span class="input-group-text"><i class="material-icons">email</i></span>
-                          </div>
+                          <MaterialInput id="email" class="mb-3" variant="outline" :label="{ text: 'Seu e-mail' }"
+                            type="email" icon="envelope" name="email" @input-change="updateData" placeholder="E-mail" />
                         </div>
                       </div>
-                      <div class="form-group mb-4 mt-md-0 mt-4">
-                        <div class="input-group input-group-static mb-4">
-                          <label>Como podemos lhe ajudar?</label>
-                          <textarea name="message" class="form-control" id="message" rows="6"
-                            placeholder="Descreva seu problema e como podemos lhe ajudar"
-                            v-model="description"></textarea>
-                        </div>
+                      <div class="form-group">
+                        <MaterialTextarea id="description" name="description" rows=6
+                          :label="{ text: 'Como podemos lhe ajudar?' }" variant="outline" @input-change="updateData"
+                          placeholder="Descreva seu problema e como podemos lhe ajudar" />
                       </div>
                       <div class="row">
                         <div class="col-md-12 text-center">
