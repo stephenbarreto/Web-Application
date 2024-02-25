@@ -80,7 +80,7 @@ export default {
               <div class="p-3 text-center border-right-after">
                 <i class="material-icons text-gradient text-primary text-5xl mb-3">email</i>
                 <h6 class="mb-0">Email</h6>
-                <p class="text-dark font-weight-normal">hello@email.com</p>
+                <p class="text-dark font-weight-normal">contato@velox.net.br</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-4 position-relative">
@@ -90,14 +90,14 @@ export default {
                   <i class="fa fa-whatsapp text-gradient text-primary text-5xl ms-3"></i>
                 </div>
                 <h6 class="mb-0">Telefone e Whatsapp</h6>
-                <p class="text-dark font-weight-normal">(38) 9 9999-9999</p>
+                <p class="text-dark font-weight-normal">(38) 9 9829-2029</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-4 me-lg-auto">
               <div class="p-3 text-center">
                 <i class="material-icons text-gradient text-primary text-5xl mb-3">contacts</i>
                 <h6 class="mb-0">Contato</h6>
-                <p class="text-dark font-weight-normal">Stephen Barreto</p>
+                <p class="text-dark font-weight-normal">VeloxNet</p>
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default {
               <div class="col-lg-8 col-10 mx-auto text-center">
                 <h3>Contate-nos</h3>
                 <p class="text-dark">
-                  Para mais dúvidas, envie um e-mail para hello@email.com ou entre em contato através do nosso
+                  Para mais dúvidas, envie um e-mail para contato@velox.net.br ou entre em contato através do nosso
                   formulário de contato.
                 </p>
               </div>
