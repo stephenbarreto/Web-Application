@@ -18,7 +18,6 @@ jmespath
 oauthlib
 psycopg2-binary==2.9.9
 pycparser
-pygraphviz
 PyJWT
 python-dateutil
 python3-openid
