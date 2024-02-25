@@ -8,7 +8,6 @@ cryptography
 defusedxml
 Django
 django-cors-headers
-django-extensions
 django-storages
 django-templated-mail
 djangorestframework
