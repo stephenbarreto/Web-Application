@@ -1,5 +1,8 @@
 <script>
 import Background from '@/assets/img/veloxnet/background.png'
+import Background1 from '@/assets/img/veloxnet/carrossel.png'
+import Background2 from '@/assets/img/veloxnet/carrossel2.png'
+import Background3 from '@/assets/img/veloxnet/carrossel3.png'
 
 export default {
   props: {
@@ -12,15 +15,12 @@ export default {
       path: Object,
       default: () => [
         { path: Background },
-        { path: Background }
+        { path: Background1 }, 
+        { path: Background2 }, 
+        { path: Background3 } 
       ]
     }
-  },
-  data() {
-    return {
-      Background
-    }
-  },
+  }
 }
 </script>
 
