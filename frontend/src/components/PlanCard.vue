@@ -21,7 +21,7 @@ export default {
     },
     link: {
       type: String,
-      default: 'https://wa.me/5538999999999?text=Ol%C3%A1%21+Vim+pelo+site+da+VeloxNet+e+gostaria+de+saber+mais+sobre+os+planos+de+assinatura+dispon%C3%ADveis.+'
+      default: 'https://wa.me/5538998292029?text=Ol%C3%A1%21+Vim+pelo+site+da+VeloxNet+e+gostaria+de+saber+mais+sobre+os+planos+de+assinatura+dispon%C3%ADveis.+'
     }
   },
   name: 'PlanCard',
