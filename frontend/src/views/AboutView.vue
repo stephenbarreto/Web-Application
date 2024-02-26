@@ -33,7 +33,7 @@ export default {
           <div class="row justify-content-center">
             <div class="col-lg-6 text-center mx-auto">
               <h2 class="text-white mb-3">Quem Somos - VeloxNet</h2>
-              <p class="lead text-white mb-6">Bem-vindo à VeloxNet, sua Jornada para a Conexão Perfeita</p>
+              <p class="lead text-white mb-6">Bem-vindo à VeloxNet, Sua Jornada para uma Conexão Acessível e Conveniente</p>
             </div>
           </div>
         </div>
@@ -47,40 +47,32 @@ export default {
               <div class="col-lg-8 col-10 mx-auto">
                 <div class="mb-md-5">
                   <p class="text-dark">
-                    Na VeloxNet, acreditamos que a internet vai além da simples conectividade; ela é a ponte que une as
-                    pessoas,
-                    os lugares e as experiências. Fundada com o compromisso de oferecer uma conexão que transforma
-                    vidas, a
-                    VeloxNet se destaca como um provedor de internet dedicado a proporcionar uma experiência online
-                    excepcional.
+                    Somos dedicados a oferecer uma conexão que não só transforma vidas, mas também se encaixa no 
+                    seu bolso. Na VeloxNet, valorizamos sua comodidade, proporcionando todos os equipamentos 
+                    necessários de forma gratuita.
                   </p>
                   <p class="text-dark">
-                    Somos mais do que um provedor de internet; somos facilitadores de conexões, impulsionados pela
-                    paixão por
-                    fornecer serviços de alta qualidade que moldam o modo como você vive, trabalha e se diverte. Na
-                    VeloxNet,
-                    estamos enraizados em valores fundamentais que orientam nossa missão:
+                    Acreditamos que todos devem ter acesso a uma internet de qualidade, independentemente de sua situação 
+                    financeira. Por isso, buscamos constantemente maneiras de oferecer serviços acessíveis, sem 
+                    comprometer a qualidade.
                   </p>
                   <p class="text-dark">
-                    <b>Inovação Constante:</b> Buscamos continuamente novas tecnologias e soluções para oferecer a você
-                    o que há
-                    de mais avançado em conectividade. Estamos na vanguarda da inovação para garantir que você aproveite
-                    os
-                    benefícios da era digital.
+                    <b>Na VeloxNet, oferecemos:</b> 
                   </p>
                   <p class="text-dark">
-                    <b>Conexão Humana:</b> Acreditamos que a internet é uma ferramenta poderosa para unir as pessoas.
-                    Nosso foco
-                    vai
-                    além dos bits e bytes; trabalhamos para criar uma experiência online que fortaleça relacionamentos,
-                    conectando comunidades e famílias.
+                    <b>Preços Acessíveis:</b> Entendemos a importância de uma internet acessível. Nossos planos são 
+                    cuidadosamente projetados para se adequar ao seu orçamento, garantindo que você tenha acesso a uma 
+                    conexão de qualidade sem pesar no bolso.
                   </p>
                   <p class="text-dark">
-                    <b>Compromisso com a Excelência:</b> Nossa equipe é impulsionada pela busca constante da excelência.
-                    Desde a
-                    instalação inicial até o suporte técnico contínuo, estamos comprometidos em superar suas
-                    expectativas e
-                    oferecer um serviço de primeira classe.
+                    <b>Equipamentos Gratuitos:</b> ão se preocupe com custos adicionais. Todos os equipamentos necessários 
+                    para desfrutar da nossa conexão de alta velocidade são fornecidos gratuitamente. Desde roteadores até cabos,
+                     estamos aqui para garantir sua comodidade desde o primeiro dia.
+                  </p>
+                  <p class="text-dark">
+                    <b>Atendimento Excepcional:</b> Além de preços acessíveis e equipamentos gratuitos, nossa equipe de suporte 
+                    técnico está sempre pronta para ajudar. Estamos disponíveis 24/7 para garantir que você receba a assistência 
+                    necessária sempre que precisar.
                   </p>
                   <h2>
                     O Que Nos Diferencia?
@@ -103,9 +95,8 @@ export default {
                     você esteja sempre conectado, sem interrupções.
                   </p>
 
-                  <b>Junte-se à VeloxNet e Viva a Experiência de uma Conexão Sem Limites. Estamos Aqui Para Transformar
-                    a
-                    Maneira Como Você Conecta com o Mundo.</b>
+                  <b>Junte-se à VeloxNet e experimente uma internet de qualidade que não compromete seu bolso. 
+                     Estamos aqui para tornar a sua jornada online fácil, acessível e conveniente.</b>
                 </div>
               </div>
             </div>

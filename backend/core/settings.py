@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'djoser',
     'api',
     'storages',
-    'django_extensions',
 ]
 
 MIDDLEWARE = [
