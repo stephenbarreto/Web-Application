@@ -27,7 +27,7 @@ class UpdateUserSerializer(serializers.ModelSerializer):
         model = user_model
         fields = ['username', 'password', 'email', 'is_active']
         extra_kwargs = {
-            'password': {'required': False},
+            'password': {'required': False, 'write_only': True},
             'username': {'required': False}
         }
 
