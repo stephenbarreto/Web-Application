@@ -38,7 +38,7 @@ export default {
         Swal.fire(
           'Erro!',
           `
-            Sua mensagem não pôde ser enviad. Por favor, tente mais tarde. Se o 
+            Sua mensagem não pôde ser enviada. Por favor, tente mais tarde. Se o 
             problema persistir, tente entrar em contato conosco por outro canal 
             de suporte.
           `,
