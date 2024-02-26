@@ -58,7 +58,7 @@ Agora você pode acessar os endpoints em [http://localhost:8000/](http://localho
 
 ## Endpoints da API
 
-No arquivo [api.rest](../api.rest), que pode ser usado no VSCode com o auxílio da extensão [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), são listados os endpoints e seus respectivos cabeçalhos e corpo da requisição. Nos endpoints privados com controle de acesso que requerem autenticação e/ou privilégios de administrador, é possível notar o cabeçalho `Authorization: Token <SEU-TOKEN-AQUI>`, onde `<SEU-TOKEN-AQUI>` deve ser substituído pelo token recebido na resposta da chamada ao endpoint de login. Mais detalhes sobre os endpoints podem ser conferidos diretamente no arquivo em questão.
+No arquivo [api.rest](../test_utils/api.rest), que pode ser usado no VSCode com o auxílio da extensão [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), são listados os endpoints e seus respectivos cabeçalhos e corpo da requisição. Nos endpoints privados com controle de acesso que requerem autenticação e/ou privilégios de administrador, é possível notar o cabeçalho `Authorization: Token {{authorization}}`, onde `{{authorization}}` será substituído pelo token recebido na resposta da chamada ao endpoint de login, que no mesmo arquivo pode ser configurado na variável `@authorization` que fica logo no topo. Mais detalhes sobre os endpoints podem ser conferidos diretamente no arquivo em questão.
 
 ## Banco de Dados
 

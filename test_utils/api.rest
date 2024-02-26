@@ -1,3 +1,10 @@
+@authorization = <seu-token-aqui>
+@protocol = https
+@hostname = veloxnet-back.vercel.app
+@host = {{hostname}}
+
+###
+
 #############################
 #                           #
 #         Usuários          #
@@ -5,15 +12,15 @@
 #############################
 
 # Listagem de usuários
-GET http://127.0.0.1:8000/api/v1/usuarios/?username=ad
-Authorization: Token <SEU-TOKEN-AQUI>
+GET {{protocol}}://{{host}}/api/v1/usuarios/
+Authorization: Token {{authorization}}
 
 ###
 
 # Registro de usuário
-POST http://127.0.0.1:8000/api/v1/usuarios/registrar
+POST {{protocol}}://{{host}}/api/v1/usuarios/registrar
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 {
   "username": "novousuario",
@@ -24,33 +31,34 @@ Authorization: Token <SEU-TOKEN-AQUI>
 ###
 
 # Login de usuário
-POST http://127.0.0.1:8000/api/v1/usuarios/auth/token/login
+POST {{protocol}}://{{host}}/api/v1/usuarios/auth/token/login
 Content-Type: application/json
 
 {
-  "email": "novousuario@example.com",
-  "password": "senha"
+  "email": "usuario@veloxnet.com",
+  "password": "senhadousuario"
 }
 
 ###
 
 # Info do usuário atual
-GET http://127.0.0.1:8000/api/v1/usuarios/auth/users/me/
+GET {{protocol}}://{{host}}/api/v1/usuarios/auth/users/me/
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ###
 
 # Logout de usuário
-POST http://127.0.0.1:8000/api/v1/usuarios/auth/logout
+POST {{protocol}}://{{host}}/api/v1/usuarios/auth/logout
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ###
 
 # Editar usuário
-POST http://127.0.0.1:8000/api/v1/usuarios/auth/token/login
+PUT {{protocol}}://{{host}}/api/v1/usuarios/editar/2
 Content-Type: application/json
+Authorization: Token {{authorization}}
 
 {
   "username": "nomedousuario",
@@ -62,9 +70,9 @@ Content-Type: application/json
 ###
 
 # Desativar usuário
-DELETE  http://127.0.0.1:8000/api/v1/usuarios/deletar/1/
+DELETE  {{protocol}}://{{host}}/api/v1/usuarios/deletar/2
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ###
 
@@ -75,14 +83,14 @@ Authorization: Token <SEU-TOKEN-AQUI>
 #############################
 
 # Listar planos
-GET http://127.0.0.1:8000/api/v1/planos/
+GET {{protocol}}://{{host}}/api/v1/planos/
 
 ###
 
 # Criar plano
-POST http://127.0.0.1:8000/api/v1/planos/criar
+POST {{protocol}}://{{host}}/api/v1/planos/criar
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 {
   "name": "Plano Avançado",
@@ -93,12 +101,12 @@ Authorization: Token <SEU-TOKEN-AQUI>
 ###
 
 # Editar plano
-PUT http://127.0.0.1:8000/api/v1/planos/editar/1/
+PUT {{protocol}}://{{host}}/api/v1/planos/editar/1
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 {
-  "name": "novo nome plano",
+  "name": "novo nome do plano",
   "value": 499.90,
   "benefits": [4, 5, 6]
 }
@@ -106,9 +114,9 @@ Authorization: Token <SEU-TOKEN-AQUI>
 ###
 
 # Deletar plano
-DELETE  http://127.0.0.1:8000/api/v1/planos/deletar/1/
+DELETE  {{protocol}}://{{host}}/api/v1/planos/deletar/1
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ###
 
@@ -119,26 +127,26 @@ Authorization: Token <SEU-TOKEN-AQUI>
 #############################
 
 # Listagem de benefícios
-GET http://127.0.0.1:8000/api/v1/planos/beneficios/
+GET {{protocol}}://{{host}}/api/v1/planos/beneficios/
 
 ###
 
 # Criar benefício
-POST http://127.0.0.1:8000/api/v1/planos/beneficios/criar/
+POST {{protocol}}://{{host}}/api/v1/planos/beneficios/criar
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 {
-  "name": "nome do beneficio",
-  "description": "descricao do beneficio"
+  "name": "Suporte 24H",
+  "description": "Suporte o tempo todo"
 }
 
 ###
 
 # Editar benefício
-PUT http://127.0.0.1:8000/api/v1/planos/beneficios/editar/1/
+PUT {{protocol}}://{{host}}/api/v1/planos/beneficios/editar/1
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 {
   "name": "novo nome do beneficio",
@@ -148,9 +156,9 @@ Authorization: Token <SEU-TOKEN-AQUI>
 ###
 
 # Deletar benefício
-DELETE  http://127.0.0.1:8000/api/v1/planos/beneficios/deletar/1/
+DELETE  {{protocol}}://{{host}}/api/v1/planos/beneficios/deletar/1
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ###
 
@@ -161,15 +169,18 @@ Authorization: Token <SEU-TOKEN-AQUI>
 #############################
 
 # Listagem de assinaturas
-GET http://127.0.0.1:8000/api/v1/assinaturas/
-Authorization: Token <SEU-TOKEN-AQUI>
+GET {{protocol}}://{{host}}/api/v1/assinaturas/
+Authorization: Token {{authorization}}
 
 ###
 
-# Criar assinatura
-POST http://127.0.0.1:8000/api/v1/assinaturas/criar
+# Criar assinatura 
+#! Não está funcionando por aqui porque a extensão Rest Client identifica os
+#! argumentos de número como string. Portanto vai dar erro, por exemplo, no user
+#! porque a api espera um inteiro com o id e não uma string.
+POST {{protocol}}://{{host}}/api/v1/assinaturas/criar
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Disposition: form-data; name="user"
@@ -180,38 +191,38 @@ Content-Disposition: form-data; name="plan"
 
 1
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="contract"; filename="example.pdf"
+Content-Disposition: form-data; name="contract"; filename="test_document.pdf"
 Content-Type: application/pdf
 
-< ./example.pdf
+< ./test_document.pdf
 
 ----WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
 # Editar assinatura
-PUT http://127.0.0.1:8000/api/v1/assinaturas/editar/1/
+PUT {{protocol}}://{{host}}/api/v1/assinaturas/editar/1
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Disposition: form-data; name="plan"
 
 2
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="contract"; filename="new-example.pdf"
+Content-Disposition: form-data; name="contract"; filename="test_document.pdf"
 Content-Type: application/pdf
 
-< ./new-example.pdf
+< ./test_document.pdf
 
 ----WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
 # Deletar assinatura
-DELETE  http://127.0.0.1:8000/api/v1/assinaturas/deletar/3
+DELETE  {{protocol}}://{{host}}/api/v1/assinaturas/deletar/1
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ###
 
@@ -222,14 +233,14 @@ Authorization: Token <SEU-TOKEN-AQUI>
 #############################
 
 # Listagem de localidades
-GET http://127.0.0.1:8000/api/v1/localidades/
+GET {{protocol}}://{{host}}/api/v1/localidades/
 
 ###
 
 # Criar localidade
-POST http://127.0.0.1:8000/api/v1/localidades/criar/
+POST {{protocol}}://{{host}}/api/v1/localidades/criar
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 {
   "city": "nova cidade localidade",
@@ -239,9 +250,9 @@ Authorization: Token <SEU-TOKEN-AQUI>
 ###
 
 # Editar localidade
-PUT http://127.0.0.1:8000/api/v1/localidades/editar/1/
+PUT {{protocol}}://{{host}}/api/v1/localidades/editar/1
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 {
   "city": "novo nome cidade localidade",
@@ -251,9 +262,9 @@ Authorization: Token <SEU-TOKEN-AQUI>
 ###
 
 # Deletar localidade
-DELETE  http://127.0.0.1:8000/api/v1/localidades/deletar/1/
+DELETE  {{protocol}}://{{host}}/api/v1/localidades/deletar/1
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ###
 
@@ -264,15 +275,15 @@ Authorization: Token <SEU-TOKEN-AQUI>
 #############################
 
 # Listar boletos
-GET http://127.0.0.1:8000/api/v1/boletos/
-Authorization: Token <SEU-TOKEN-AQUI>
+GET {{protocol}}://{{host}}/api/v1/boletos/
+Authorization: Token {{authorization}}
 
 ###
 
 # Criar boleto
-POST http://127.0.0.1:8000/api/v1/boletos/criar/
+POST {{protocol}}://{{host}}/api/v1/boletos/criar
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Disposition: form-data; name="signature"
@@ -281,40 +292,44 @@ Content-Disposition: form-data; name="signature"
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Disposition: form-data; name="expire_date"
 
-01-01-2024
+2024-03-15
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="document"; filename="example.pdf"
+Content-Disposition: form-data; name="document"; filename="test_document.pdf"
 Content-Type: application/pdf
 
-< ./example.pdf
+< ./test_document.pdf
 
 ----WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
 # Editar boleto
-PUT http://127.0.0.1:8000/api/v1/boletos/editar/1/
+PUT {{protocol}}://{{host}}/api/v1/boletos/editar/1
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Disposition: form-data; name="expire_date"
 
-03-02-2024
+2024-03-15
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="document"; filename="new-example.pdf"
+Content-Disposition: form-data; name="signature"
+
+1
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="document"; filename="test_document.pdf"
 Content-Type: application/pdf
 
-< ./new-example.pdf
+< ./test_document.pdf
 
 ----WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
 # Deletar boleto
-DELETE  http://127.0.0.1:8000/api/v1/boletos/deletar/1/
+DELETE  {{protocol}}://{{host}}/api/v1/boletos/deletar/1
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 ###
 
@@ -325,9 +340,9 @@ Authorization: Token <SEU-TOKEN-AQUI>
 #############################
 
 # Alteração de Senha do cliente
-PUT http://127.0.0.1:8000/api/v1/cliente/senha/alterar
+PUT {{protocol}}://{{host}}/api/v1/cliente/senha/alterar
 Content-Type: application/json
-Authorization: Token <SEU-TOKEN-AQUI>
+Authorization: Token {{authorization}}
 
 {
   "old_password": "senhadonovousuario",
@@ -337,13 +352,13 @@ Authorization: Token <SEU-TOKEN-AQUI>
 ###
 
 # Listar assinaturas do cliente
-GET http://127.0.0.1:8000/api/v1/cliente/assinaturas
-Authorization: Token <SEU-TOKEN-AQUI>
+GET {{protocol}}://{{host}}/api/v1/cliente/assinaturas
+Authorization: Token {{authorization}}
 
 ###
 
 # Listar boletos do cliente
-GET http://127.0.0.1:8000/api/v1/cliente/boletos
-Authorization: Token <SEU-TOKEN-AQUI>
+GET {{protocol}}://{{host}}/api/v1/cliente/boletos
+Authorization: Token {{authorization}}
 
 ###
